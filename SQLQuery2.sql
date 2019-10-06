@@ -76,14 +76,13 @@ CREATE TABLE MovieActor (
 );
 
 INSERT INTO MovieActor(MovieId,ActorId) VALUES(1,5);
-SELECT * FROM Actor;
 
 --16. Implement many to many relationship between Movie and Genre
 CREATE TABLE Genre(
 	Id int IDENTITY(1,1) PRIMARY KEY,
 	Name VARCHAR(MAX) NOT NULL
 );
-select * from Genre
+
 CREATE TABLE MovieGenre(
 	MovieId int CONSTRAINT fk_movieId REFERENCES Movie(Id),
 	GenreId int CONSTRAINT fk_genreId REFERENCES Genre(Id)
